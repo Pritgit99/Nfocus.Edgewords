@@ -35,10 +35,10 @@ namespace ecommerce.project.Utils
                     break;
             }
             driver.Manage().Window.Maximize();
-
+            
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
 
-            driver.Url = "https://www.edgewordstraining.co.uk/demo-site";
+            driver.Url = "https://www.edgewordstraining.co.uk/demo-site"; //Sets the base url
 
             HomePagePOM homePage = new HomePagePOM(driver);
 
@@ -47,7 +47,7 @@ namespace ecommerce.project.Utils
             LoginPagePOM loginPage = new LoginPagePOM(driver);
 
             loginPage.SetUsername("pritesh.panchal@nfocus.co.uk");
-            string login_password = Environment.GetEnvironmentVariable("loginpassword");
+            string login_password = Environment.GetEnvironmentVariable("loginpassword"); //Using an environment variable to get the password for security and data protection
             var passwordField = driver.FindElement(By.Id("password"));
             driver.FindElement(By.Id("password")).SendKeys(login_password);
             loginPage.ClickLogin();
@@ -57,17 +57,13 @@ namespace ecommerce.project.Utils
             goToShopPage.GoToShop();
             //Have an assertion that we are on shop page
 
-            var js = (IJavaScriptExecutor)driver;
-            js.ExecuteScript("window.scrollBy(0,250)", ""); //Scrolls down to view items
-
-            ShopPagePOM newItem = new ShopPagePOM(driver);
-            newItem.AddToCart();
-            newItem.ViewCart();
         }
 
         [TearDown]
         public void TearDown()
         {
+            MyAccountPagePOM logOut = new MyAccountPagePOM(driver);
+            logOut.Logout();
             //driver.Quit();
         }
     }

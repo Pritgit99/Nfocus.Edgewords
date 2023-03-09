@@ -18,6 +18,7 @@ namespace ecommerce.project.POMClasses
 
         //Locators
         IWebElement logOut => _driver.FindElement(By.LinkText("Logout"));
+        IWebElement pastOrders => _driver.FindElement(By.CssSelector("#post-7 > div > div > div > table > tbody > tr:nth-child(1) > td.woocommerce-orders-table__cell.woocommerce-orders-table__cell-order-number > a"));
 
 
         public void Logout()
@@ -25,8 +26,10 @@ namespace ecommerce.project.POMClasses
             logOut.Click();
         }
 
-        public IWebElement PastOrders => _driver.FindElement(By.CssSelector("#post-7 > div > div > div > table"));
-
+        public string GetOrders()
+        {
+            return pastOrders.Text;
+        }
 
     }
 }

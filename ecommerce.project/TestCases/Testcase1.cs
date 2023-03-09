@@ -10,7 +10,7 @@ using System.Xml.XPath;
 
 namespace ecommerce.project.TestCases
 {
-    internal class Testcase1 : BasePOM
+    internal class Testcase1 : BaseTest
     {
 
         [Test]

@@ -37,66 +37,76 @@ namespace ecommerce.project.POMClasses
         //service method
 
 
-        public void SetFirstName(string billing_first_name) //Clears the first name field and sets the value
+        public void SetFirstName(string firstName) //Clears the first name field and sets the value
         {
             firstNameField.Clear();
-            firstNameField.SendKeys(billing_first_name);
+            firstNameField.Click();
+            firstNameField.SendKeys(firstName);
         }
 
-        public void SetLastName(string billing_last_name)
+        public void SetLastName(string lastName)
         {
             lastNameField.Clear();
-            lastNameField.SendKeys(billing_last_name);
+            lastNameField.Click();
+            lastNameField.SendKeys(lastName);
         }
 
-        public void SetCompanyName(string billing_company_name)
+        public void SetCompanyName(string companyName)
         {
             companyNameField.Clear();
-            companyNameField.SendKeys(billing_company_name);
+            companyNameField.Click();
+            companyNameField.SendKeys(companyName);
         }
 
-        public void SetAddressLine1(string billing_address_line1)
+        public void SetAddressLine1(string addressLine1)
         {
             addressField1.Clear();
-            addressField1.SendKeys(billing_address_line1);
+            addressField1.Click();
+            addressField1.SendKeys(addressLine1);
         }
 
 
-        public void SetAddressLine2(string billing_address_line2)
+        public void SetAddressLine2(string addressLine2)
         {
             addressField2.Clear();
-            addressField2.SendKeys(billing_address_line2);
+            addressField2.Click();
+            addressField2.SendKeys(addressLine2);
         }
 
 
-        public void SetBillingCity(string billing_city)
+        public void SetBillingCity(string city)
         {
             cityField.Clear();
-            cityField.SendKeys(billing_city);
+            cityField.Click();
+            cityField.SendKeys(city);
         }
 
-        public void SetCounty(string billing_state)
+        public void SetCounty(string county)
         {
             countyField.Clear();
-            countyField.SendKeys(billing_state);
+            countyField.Click();
+            countyField.SendKeys(county);
         }
 
-        public void SetPostcode(string billing_postcode)
+        public void SetPostcode(string postcode)
         {
             postcodeField.Clear();
-            postcodeField.SendKeys(billing_postcode);
+            postcodeField.Click();
+            postcodeField.SendKeys(postcode);
         }
 
-        public void SetPhoneNumber(string billing_phone)
+        public void SetPhoneNumber(string phoneNumber)
         {
             phoneNumberField.Clear();
-            phoneNumberField.SendKeys(billing_phone);
+            phoneNumberField.Click();
+            phoneNumberField.SendKeys(phoneNumber);
         }
 
-        public void SetEmail(string billing_email)
+        public void SetEmail(string emailAddress)
         {
             emailField.Clear();
-            emailField.SendKeys(billing_email);
+            emailField.Click();
+            emailField.SendKeys(emailAddress);
         }
 
         public void ClickDifferentShippingAddress()

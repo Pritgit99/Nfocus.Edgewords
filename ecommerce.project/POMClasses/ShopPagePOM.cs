@@ -17,11 +17,19 @@ namespace ecommerce.project.POMClasses
 
         //Locators
 
-        IWebElement addToCart => _driver.FindElement(By.CssSelector("#main > ul > li.product.type-product.post-27.status-publish.first.instock.product_cat-accessories.has-post-thumbnail.sale.shipping-taxable.purchasable.product-type-simple > a.button.product_type_simple.add_to_cart_button.ajax_add_to_cart"));
+        IWebElement addToCart => _driver.FindElement(By.LinkText("Add to cart"));
         IWebElement viewCart => _driver.FindElement(By.LinkText("View cart"));
+        IWebElement dismissNotice => _driver.FindElement(By.ClassName("woocommerce-store-notice__dismiss-link"));
 
 
         //service method
+
+        public IWebElement SelectRandomAddToCartLink()
+        {
+            IList<IWebElement> addToCartLinks = _driver.FindElements(By.LinkText("Add to cart"));
+            Random random = new Random();
+            return addToCartLinks[random.Next(addToCartLinks.Count)];
+        }
 
         public void AddToCart()
         {
@@ -31,6 +39,11 @@ namespace ecommerce.project.POMClasses
         public void ViewCart()
         {
             viewCart.Click();
+        }
+
+        public void DismissNotice()
+        {
+            dismissNotice.Click();
         }
     }
 }

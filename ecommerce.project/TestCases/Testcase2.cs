@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace ecommerce.project.TestCases
 {
-    internal class Testcase2 :BasePOM
+    internal class Testcase2 :BaseTest
     {
         [Test]
         public void PlaceOrder()

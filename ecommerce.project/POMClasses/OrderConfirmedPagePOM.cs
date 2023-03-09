@@ -19,6 +19,8 @@ namespace ecommerce.project.POMClasses
         //Locators
         IWebElement accountLink => _driver.FindElement(By.LinkText("My account"));
 
+        IWebElement orderNumber => _driver.FindElement(By.CssSelector("#post-6 > div > div > div > ul > li.woocommerce-order-overview__order.order > strong"));
+
 
         //service method
         public void AccountPage()
@@ -29,7 +31,7 @@ namespace ecommerce.project.POMClasses
 
         public string GetOrderNumber() //Obtains the order number once a user places an order and stores it
         {
-            IWebElement orderNumber = _driver.FindElement(By.CssSelector("#post-6 > div > div > div > ul > li.woocommerce-order-overview__order.order > strong"));
+            
             return orderNumber.Text;
         }
 
